@@ -20,4 +20,4 @@ Filepath is the path of your maze.
 #
 # Reminder
 This project was made on linux with Ncurses library (I'm working on a little more enjoyable experience to watch the program working).
-be sure that you have downlaoded the library before anything : https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
+be sure that you have downloaded the library before anything : https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
