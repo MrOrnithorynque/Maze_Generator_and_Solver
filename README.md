@@ -1,6 +1,6 @@
 #
 # Maze_Generator_and_Solver
-Here is a little program who generates mazes and solve them.
+Here is a little program which generates mazes and solve them.
 #
 # How to use 
 > make
