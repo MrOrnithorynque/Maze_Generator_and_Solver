@@ -11,7 +11,7 @@ To execute generator :
 > ./generator lines cols perfect
 
 Lines and cols are your two numbers to create your maze (don't go more than 100 * 100, it's beginning to be kinda slow).
-And the perfect argument is optional. It's to create a perfect maze who has no loops and no clusters.
+And the perfect argument is optional. It's to create a perfect maze which has no loops and no clusters.
 
 To execute solver :
 > ./solver filepath
