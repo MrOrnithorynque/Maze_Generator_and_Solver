@@ -1,6 +1,6 @@
 #
 # Maze_Generator_and_Solver
-Here is a little program which generates mazes and solve them.
+Here is a little program which generates mazes and solves them.
 #
 # How to use 
 > make
@@ -20,4 +20,4 @@ Filepath is the path of your maze.
 #
 # Reminder
 This project was made on linux with Ncurses library (I'm working on a little more enjoyable experience to watch the program working).
-be sure that you downlaod the library before anything : https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
+be sure that you have downlaoded the library before anything : https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
