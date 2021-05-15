@@ -5,7 +5,7 @@ Here is a little program which generates mazes and solve them.
 # How to use 
 > make
 
-Two binaries will show up on them respective folder (generator and solver).
+Two binaries will show up on their respective folder (generator and solver).
 
 To execute generator :
 > ./generator lines cols perfect
