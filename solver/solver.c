@@ -23,7 +23,7 @@ static int is_finished(int solution, smaze_t *maze)
     return 0;
 }
 
-static int get_cell_from_pos(int *pos, smaze_t *maze, int *vector)
+int get_scell_from_pos(int *pos, smaze_t *maze, int *vector)
 {
     int cell = pos[0] + vector[0] + ((pos[1] + vector[1]) * maze->cols);
 
@@ -44,7 +44,7 @@ static int is_neighbors(scell_t **cell, smaze_t *maze, svector_t *vect, int c)
 
     for (int i = 0; i < 4; i++)
     {
-        next_c = get_cell_from_pos(pos, maze, vect->vector[i]);
+        next_c = get_scell_from_pos(pos, maze, vect->vector[i]);
         if (next_c >= 0 && next_c < maze->nb_blocks)
             if (cell[next_c]->visited == false && cell[next_c]->wall == false)
             {
@@ -63,19 +63,16 @@ void water_solver(scell_t **cell, smaze_t *maze, svector_t *vect)
 {
     int solution = 1;
 
-    while (cell[maze->nb_blocks - 1]->visited != true) {
-        for (int i = 0; i < maze->nb_blocks; i++) {
+    while (cell[maze->nb_blocks - 1]->visited != true)
+    {
+        for (int i = 0; i < maze->nb_blocks; i++)
             if (cell[i]->tail == true)
-            {
                 solution = is_neighbors(cell, maze, vect, i);
-            }
-        }
-        if(is_finished(solution, maze) == -1)
-        {
+        if(is_finished(solution, maze) == -1) {
             my_putstr("no solution found");
             return;
         }
     }
 
-    create_finished_maze(cell, maze);
+    //create_finished_maze(cell, maze);
 }

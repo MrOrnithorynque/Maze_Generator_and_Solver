@@ -30,4 +30,8 @@ typedef struct scell_s {
     bool wall;
 } scell_t;
 
+typedef struct srender_s {
+    int nb_blocks;
+} srender_t;
+
 #endif /* !STRUCT_H_ */

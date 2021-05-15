@@ -29,7 +29,7 @@ static void check_map(char *map)
 
     for (; map[cols] != '\n'; cols++);
     for (int i = 0; map[i] != '\0'; i++) {
-        if (map[i] != '*' && map[i] != 'X' && map[i] != '\n') {
+        if (map[i] != ' ' && map[i] != 'X' && map[i] != '\n') {
             my_puterror("error : incorrect map.\n");
             exit(84);
         }

@@ -5,6 +5,7 @@
 ** depth_first_search
 */
 
+#include <ncurses.h>
 #include "my.h"
 #include "src.h"
 #include "struct_generator.h"
@@ -74,7 +75,7 @@ void detect_neighbors(cell_t **cell, maze_t *maze, int c)
                 cell[c]->tail = false;
             cell[get_cell_from_pos(pos, maze, cell[c]->min_vector[i])] \
             ->visited = true;
-
+            render_generator(cell, maze);
             return;
         }
     }
@@ -83,7 +84,11 @@ void detect_neighbors(cell_t **cell, maze_t *maze, int c)
 void depth_first_search(cell_t **cell, maze_t *maze, int flag)
 {
     int i_cell = 0;
+    int key = -1;
+    WINDOW *screen = initscr();
 
+    curs_set(FALSE);
+    keypad(stdscr, TRUE);
     for (int i = 0; i < maze->nb_blocks; i++) {
         for (int j = 0; j < maze->nb_blocks; j++) {
             if (cell[i_cell]->pos_x % 2 == 0 && \
@@ -93,11 +98,14 @@ void depth_first_search(cell_t **cell, maze_t *maze, int flag)
             i_cell = j + rand() / (RAND_MAX / (maze->nb_blocks - j) + 1);
         }
     }
-
     if (flag == 0)
-        for (int i = 0; i < maze->nb_blocks / 4; i++)
+        for (int i = 0; i < maze->nb_blocks / 4; i++) {
             cell[i + rand() / (RAND_MAX / (maze->nb_blocks - i) + 1)]->visited\
             = true;
-
+            render_generator(cell, maze);
+        }
     generate_finished_maze(cell, maze);
+    render_generator(cell, maze);
+    curs_set(TRUE);
+    endwin();
 }

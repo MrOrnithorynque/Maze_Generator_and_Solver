@@ -81,3 +81,11 @@ svector_t *vector_struct(void)
 
     return vect;
 }
+
+srender_t *render_struct(smaze_t *maze)
+{
+    srender_t *render = malloc(sizeof(srender_t));
+
+    render->nb_blocks = maze->nb_blocks - 1;
+    return render;
+}

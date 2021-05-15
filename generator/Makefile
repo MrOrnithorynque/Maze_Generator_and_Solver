@@ -13,15 +13,17 @@ CPPFLAGS= 	-I../includes/
 
 LDFLAGS = 	-L../lib/
 
-LDLIBS 	= 	-lmy
+LDLIBS 	= 	-lmy -lncurses
 
-SRC 	= 	main.c				\
-			error_handling.c 	\
-			create_maze.c 		\
-			fill_structs.c 	    \
-			free_generator.c 	\
-			depth_first_search.c\
-			random.c 			\
+SRC 	= 	main.c										\
+			error_handling.c 							\
+			create_maze.c 								\
+			fill_structs.c 	    						\
+			free_generator.c 							\
+			depth_first_search.c						\
+			random.c 									\
+			render_generator/render_generating_maze.c 	\
+			render_generator/rendering.c				\
 
 OBJ 	= 	$(SRC:.c=.o)
 

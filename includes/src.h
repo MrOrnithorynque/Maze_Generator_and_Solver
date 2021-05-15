@@ -30,6 +30,7 @@ static const int RIGHT[]    = {2, 0};
 //----------------------------SRC-----------------------------
 
 int     random_from_address(int address, int min, int max);
+int     get_scell_from_pos(int *pos, smaze_t *maze, int *vector);
 int     *create_random_cell(int nb_cells);
 char    *read_file(char *filepath);
 char    **generate_fill_maze(int lines, int cols);
@@ -43,10 +44,15 @@ void    free_solver(scell_t **cell, smaze_t *maze, svector_t *vect);
 void    create_finished_maze(scell_t **cell, smaze_t *maze);
 void    detect_neighbors(cell_t **cell, maze_t *maze, int c);
 void    random_vector(cell_t *cell);
-cell_t  **create_tab_cell_struct(maze_t *maze);
-scell_t **cell_struct(smaze_t *maze);
-maze_t  *fill_maze_struct(int lines, int cols);
-smaze_t *maze_struct(char *map);
-svector_t *vector_struct(void);
+void    render_solver(scell_t **cell, smaze_t *maze, srender_t *render);
+void    render_generator(cell_t **cell, maze_t *maze);
+void    render_solved_map(scell_t **cell, smaze_t *maze, srender_t *render);
+void    render_generat_map(cell_t **cell, maze_t *maze);
+cell_t      **create_tab_cell_struct(maze_t *maze);
+scell_t     **cell_struct(smaze_t *maze);
+maze_t      *fill_maze_struct(int lines, int cols);
+smaze_t     *maze_struct(char *map);
+svector_t   *vector_struct(void);
+srender_t   *render_struct(smaze_t *maze);
 
 #endif /* !SRC_H_ */

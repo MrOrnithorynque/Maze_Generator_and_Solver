@@ -12,9 +12,9 @@
 static char **create_end_maze(maze_t *maze)
 {
     if (maze->cols % 2 == 0)
-        maze->maze_map[maze->lines - 1][maze->cols - 1] = '*';
+        maze->maze_map[maze->lines - 1][maze->cols - 1] = ' ';
     if (maze->lines % 2 == 0)
-        maze->maze_map[maze->lines - 1][maze->cols - 2] = '*';
+        maze->maze_map[maze->lines - 1][maze->cols - 2] = ' ';
 
     return maze->maze_map;
 }
@@ -47,13 +47,13 @@ char **generate_finished_maze(cell_t **cell, maze_t *maze)
 {
     for (int i = 0; i < maze->nb_blocks; i++) {
         if (cell[i]->visited == true)
-            maze->maze_map[cell[i]->pos_y][cell[i]->pos_x] = '*';
+            maze->maze_map[cell[i]->pos_y][cell[i]->pos_x] = ' ';
     }
     maze->maze_map = create_end_maze(maze);
 
-    for (int i = 0; maze->maze_map[i + 1] != NULL ; i++)
-        printf("%s\n", maze->maze_map[i]);
-    printf("%s", maze->maze_map[maze->lines - 1]);
+    //for (int i = 0; maze->maze_map[i + 1] != NULL ; i++)
+    //    printf("%s\n", maze->maze_map[i]);
+    //printf("%s", maze->maze_map[maze->lines - 1]);
 
     return maze->maze_map;
 }

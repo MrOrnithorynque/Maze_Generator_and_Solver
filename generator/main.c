@@ -27,8 +27,9 @@ int main(int ac, char **av)
 
     error_handling_generation(ac, av);
 
-    maze_t *maze = fill_maze_struct(my_getnbr(av[1]), my_getnbr(av[2]));
-    cell_t **cell = create_tab_cell_struct(maze);
+    maze_t *maze        = fill_maze_struct(my_getnbr(av[1]), my_getnbr(av[2]));
+    cell_t **cell       = create_tab_cell_struct(maze);
+    render_t *render    = NULL;
 
     if (ac == 4 && strcmp(av[3], "perfect") == 0)
         flag = 1;

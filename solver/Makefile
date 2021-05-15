@@ -15,14 +15,16 @@ CPPFLAGS= 	-I../includes/
 
 LDFLAGS = 	-L../lib/
 
-LDLIBS 	= 	-lmy
+LDLIBS 	= 	-lmy -lncurses
 
-SRC 	= 	main.c 					\
-			error_handling.c		\
-			fill_structs.c			\
-			solver.c 				\
-			display_solved_maze.c	\
-			free_solver.c 			\
+SRC 	= 	main.c 								\
+			error_handling.c					\
+			fill_structs.c						\
+			solver.c 							\
+			display_solved_maze.c				\
+			free_solver.c 						\
+			render_solver/rendering.c 			\
+			render_solver/render_solved_maze.c 	\
 
 OBJ 	= 	$(SRC:.c=.o)
 

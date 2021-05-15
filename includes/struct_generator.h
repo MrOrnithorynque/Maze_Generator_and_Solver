@@ -28,4 +28,8 @@ typedef struct cell_s {
     int **min_vector;
 } cell_t;
 
+typedef struct render_s {
+    int nb_blocks;
+} render_t;
+
 #endif /* !STRUCT_GENERATOR_H_ */
