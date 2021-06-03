@@ -27,7 +27,7 @@ static void print_map(maze_t *maze)
 void render_generator(cell_t **cell, maze_t *maze)
 {
     clear();
-    usleep(10000);
+    usleep(1000);
     render_generat_map(cell, maze);
     print_map(maze);
     refresh();

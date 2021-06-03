@@ -13,12 +13,13 @@ static int is_finished(int solution, smaze_t *maze)
 {
     static int tmp = 0;
 
-    if (maze->maze_map[maze->lines - 1][maze->cols - 1] == 'X')
+    if (maze->maze_map[maze->lines - 1][maze->cols - 1] == 'X') {
         return -1;
-    else if (solution == tmp)
+    } else if (solution == tmp) {
         return -1;
-    else
+    } else {
         tmp = solution;
+    }
 
     return 0;
 }
