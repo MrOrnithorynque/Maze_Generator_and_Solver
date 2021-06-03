@@ -13,8 +13,12 @@ To execute generator :
 Lines and cols are your two numbers to create your maze (don't go more than 100 * 100, it's beginning to be kinda slow).
 And the perfect argument is optional. It's to create a perfect maze which has no loops and no clusters.
 
+![generator_perfect](readme_ressources/generator_perfect.gif)
+
 To execute solver :
 > ./solver filepath
+
+![solver](readme_ressources/solver.gif)
 
 Filepath is the path of your maze.
 #
